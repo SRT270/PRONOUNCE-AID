@@ -1,0 +1,193 @@
+/** @import must precede all other statements */
+@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Lexend:wght@400;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Tailwind CSS theme
+   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
+   */
+  :root {
+    /* Brand: professional, accessible palette */
+    --background: 210 40% 98%;
+    --foreground: 222 22% 16%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 22% 16%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 22% 16%;
+
+    /* Primary: #4A90E2 */
+    --primary: 210 72% 59%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary: Teal */
+    --secondary: 174 65% 40%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Muted & Accent */
+    --muted: 210 30% 98%;
+    --muted-foreground: 215 10% 45%;
+
+    --accent: 39 96% 56%; /* #F9A826 */
+    --accent-foreground: 222 22% 16%;
+
+    --destructive: 0 82% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 12% 90%;
+    --input: 220 12% 90%;
+    --ring: 236 85% 40%;
+
+    --radius: 0.75rem;
+
+    /* Sidebar (for potential future use) */
+    --sidebar-background: 210 40% 99%;
+    --sidebar-foreground: 222 22% 16%;
+    --sidebar-primary: 236 85% 40%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 200 100% 96%;
+    --sidebar-accent-foreground: 222 22% 16%;
+    --sidebar-border: 220 12% 90%;
+    --sidebar-ring: 174 65% 40%;
+
+  }
+
+  .dark {
+    --background: 230 45% 7%;
+    --foreground: 210 40% 98%;
+
+    --card: 230 45% 10%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 230 45% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 236 85% 57%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 174 65% 46%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 228 15% 18%;
+    --muted-foreground: 210 10% 75%;
+
+    --accent: 28 90% 58%;
+    --accent-foreground: 222 22% 16%;
+
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 228 15% 24%;
+    --input: 228 15% 24%;
+    --ring: 236 85% 57%;
+
+    --sidebar-background: 230 45% 7%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 236 85% 57%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 228 15% 18%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 228 15% 24%;
+    --sidebar-ring: 174 65% 46%;
+  }
+
+  .dark {
+    --background: 230 45% 7%;
+    --foreground: 210 40% 98%;
+
+    --card: 230 45% 10%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 230 45% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 268 92% 67%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 173 74% 46%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 228 15% 18%;
+    --muted-foreground: 210 10% 75%;
+
+    --accent: 32 96% 58%;
+    --accent-foreground: 230 45% 10%;
+
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 228 15% 24%;
+    --input: 228 15% 24%;
+    --ring: 268 92% 67%;
+
+    --sidebar-background: 230 45% 7%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 268 92% 67%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 228 15% 18%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 228 15% 24%;
+    --sidebar-ring: 173 74% 46%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html:focus-within {
+    scroll-behavior: smooth;
+  }
+
+  /* Dyslexia-friendly helper */
+  .lexend {
+    font-family: 'Lexend', 'Atkinson Hyperlegible', Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Improve readability for dyslexic learners */
+  :where(p, span, li) {
+    letter-spacing: 0.15px;
+    line-height: 1.65;
+  }
+
+  :where(h1, h2, h3, h4) {
+    letter-spacing: 0.2px;
+  }
+
+  :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  pre,
+  code {
+    overflow-x: auto;
+    white-space: pre;
+  }
+}
+
+@layer components {
+  .brand-gradient {
+    background-image: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)) 50%, hsl(var(--accent)));
+  }
+  .card-soft {
+    @apply rounded-2xl border bg-card shadow-sm;
+  }
+  .glass {
+    backdrop-filter: saturate(140%) blur(10px);
+    background-color: hsl(var(--card) / 0.6);
+    border: 1px solid hsl(var(--border));
+  }
+}
